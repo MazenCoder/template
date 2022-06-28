@@ -1,0 +1,15 @@
+analyzer:
+  exclude:
+    - feature/**
+
+#include: package:flutter_lints/flutter.yaml
+#include: package:very_good_analysis/analysis_options.yaml
+#linter:
+#  rules:
+#    public_member_api_docs: false
+#    use_key_in_widget_constructors: false
+
+
+#analyzer:
+#  exclude: [mason/**]
+#    - auths/**
