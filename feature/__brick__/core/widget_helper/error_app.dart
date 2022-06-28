@@ -25,11 +25,10 @@ class ErrorApp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Lottie.asset('IMG.jsonError', height: Get.height / 2.4),
-                  // Image.asset(IMG.error, height: 220),
-                  const SizedBox(
-                    height: 5,
-                  ),
+                  // Lottie.asset('IMG.jsonError', height: Get.height / 2.4),
+                  // const SizedBox(
+                  //   height: 5,
+                  // ),
                   Text(
                     message ?? 'error_wrong'.tr,
                     textAlign: TextAlign.center,

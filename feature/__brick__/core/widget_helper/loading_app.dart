@@ -74,12 +74,13 @@ class _LoadingAppState extends State<LoadingApp>
                     opacity: animation,
                     child: Padding(
                       padding: const EdgeInsets.all(18.0),
-                      child: SvgPicture.asset(
-                        'IMG.logo',
-                        color: Colors.white,
-                        width: size.width / 1.2,
-                        // height: size.width/5.2,
-                      ),
+                      child: CircularProgressIndicator(),
+                      // child: SvgPicture.asset(
+                      //   'IMG.logo',
+                      //   color: Colors.white,
+                      //   width: size.width / 1.2,
+                      //   // height: size.width/5.2,
+                      // ),
                     ),
                   ),
                 ),
