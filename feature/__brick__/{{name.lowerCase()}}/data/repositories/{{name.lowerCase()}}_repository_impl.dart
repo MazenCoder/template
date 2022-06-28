@@ -5,12 +5,14 @@ import '../models/{{name.lowerCase()}}_params.dart';
 import '../models/{{name.lowerCase()}}_model.dart';
 import '../../../core/usecases/constants.dart';
 import '../../../core/error/exceptions.dart';
+import 'package:injectable/injectable.dart';
 import '../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:get/get.dart';
 
 
+@LazySingleton(as: {{name.pascalCase()}Repository)
 class {{name.pascalCase()}}RepositoryImpl implements {{name.pascalCase()}}Repository {
   final {{name.pascalCase()}}RemoteDataSource remoteDataSource;
   final {{name.pascalCase()}}LocalDataSource localDataSource;

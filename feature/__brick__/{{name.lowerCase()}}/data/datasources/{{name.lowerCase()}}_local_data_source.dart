@@ -1,8 +1,10 @@
-import '../../../core/error/exceptions.dart';
-import '../../../core/util/boxes.dart';
 import '../models/{{name.lowerCase()}}_model.dart';
+import '../../../core/error/exceptions.dart';
+import 'package:injectable/injectable.dart';
+import '../../../core/util/boxes.dart';
 import 'package:meta/meta.dart';
 import 'dart:convert';
+
 
 
 abstract class {{name.pascalCase()}}LocalDataSource {
@@ -12,6 +14,7 @@ abstract class {{name.pascalCase()}}LocalDataSource {
 
 const cached_{{name.lowerCase()}} = 'cached_{{name.lowerCase()}}';
 
+@LazySingleton(as: {{name.pascalCase()}}LocalDataSource)
 class {{name.pascalCase()}}LocalDataSourceImpl implements {{name.pascalCase()}}LocalDataSource {
 
   final box = Boxes.appCached();
