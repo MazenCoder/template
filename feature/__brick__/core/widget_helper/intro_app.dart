@@ -1,14 +1,13 @@
-import 'dart:io';
-
+import '../../features/{{name.lowerCase()}}/presentation/pages/{{name.lowerCase()}}.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-
+import 'dart:io';
+import '../../core/util/generateMaterialColor.dart';
 import '../../core/models/slider_model.dart';
 import '../../core/usecases/keys.dart';
-import '../../core/util/generateMaterialColor.dart';
-import '../util/boxes.dart';
 import 'responsive_safe_area.dart';
+import '../util/boxes.dart';
 import 'slide_tile.dart';
 
 class IntroApp extends StatefulWidget {
