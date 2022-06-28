@@ -1,6 +1,6 @@
 import '../models/{{name.lowerCase()}}_params.dart';
 import '../models/{{name.lowerCase()}}_model.dart';
-import '../../../core/error/exceptions.dart';
+import '../../../../core/error/exceptions.dart';
 import 'package:injectable/injectable.dart';
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';

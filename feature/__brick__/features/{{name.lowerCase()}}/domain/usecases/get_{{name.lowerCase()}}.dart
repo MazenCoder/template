@@ -1,9 +1,9 @@
 import '../repositories/{{name.lowerCase()}}_repository.dart';
 import '../../data/models/{{name.lowerCase()}}_params.dart';
 import '../entities/{{name.lowerCase()}}_entity.dart';
-import '../../../core/usecases/usecase.dart';
+import '../../../../core/usecases/usecase.dart';
+import '../../../../core/error/failures.dart';
 import 'package:injectable/injectable.dart';
-import '../../../core/error/failures.dart';
 import 'package:equatable/equatable.dart';
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';

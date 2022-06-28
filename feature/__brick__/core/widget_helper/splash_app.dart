@@ -113,13 +113,14 @@ class _SplashAppState extends State<SplashApp>
                 ClipOval(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Image.asset(
-                      'IMG.logo',
-                      fit: BoxFit.contain,
-                      width: size.width / 2,
-                      height: size.width / 2,
-                      filterQuality: FilterQuality.high,
-                    ),
+                    child: CircularProgressIndicator(),
+                    // child: Image.asset(
+                    //   IMG.logo,
+                    //   fit: BoxFit.contain,
+                    //   width: size.width / 2,
+                    //   height: size.width / 2,
+                    //   filterQuality: FilterQuality.high,
+                    // ),
                   ),
                 ),
                 const SizedBox(height: 8),

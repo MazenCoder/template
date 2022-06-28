@@ -1,8 +1,8 @@
 import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
 import '../../domain/usecases/get_{{name.lowerCase()}}.dart';
 import '../../data/models/{{name.lowerCase()}}_params.dart';
+import '../../../../core/error/failures.dart';
 import 'package:injectable/injectable.dart';
-import '../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';

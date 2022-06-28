@@ -1,6 +1,6 @@
 import '../../data/models/{{name.lowerCase()}}_params.dart';
 import '../entities/{{name.lowerCase()}}_entity.dart';
-import '../../../core/error/failures.dart';
+import '../../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 
 

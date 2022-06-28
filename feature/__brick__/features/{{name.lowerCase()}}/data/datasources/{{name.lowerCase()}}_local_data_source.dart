@@ -1,7 +1,7 @@
 import '../models/{{name.lowerCase()}}_model.dart';
-import '../../../core/error/exceptions.dart';
+import '../../../../core/error/exceptions.dart';
 import 'package:injectable/injectable.dart';
-import '../../../core/util/boxes.dart';
+import '../../../../core/util/boxes.dart';
 import 'package:meta/meta.dart';
 import 'dart:convert';
 

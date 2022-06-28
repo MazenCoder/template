@@ -1,12 +1,12 @@
-import '../../../core/widget_helper/responsive_safe_area.dart';
+import '../../../../core/widget_helper/responsive_safe_area.dart';
 import '../widgets/{{name.lowerCase()}}_initial_widget.dart';
 import '../widgets/{{name.lowerCase()}}_loaded_widget.dart';
 import '../../data/models/{{name.lowerCase()}}_params.dart';
-import '../../../core/widget_helper/loading_app.dart';
-import '../../../core/widget_helper/error_app.dart';
+import '../../../../core/widget_helper/loading_app.dart';
+import '../../../../core/widget_helper/error_app.dart';
+import '../../../../core/injection/injection.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../bloc/{{name.lowerCase()}}_bloc.dart';
-import '../../../core/injection/injection.dart';
 import 'package:flutter/material.dart';
 
 
