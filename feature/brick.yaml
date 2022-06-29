@@ -23,6 +23,6 @@ environment:
 vars:
   name:
     type: string
-    description: Your feature
+    description: Your freezed model
     default: Dash
-    prompt: What is your feature?
+    prompt: What is your freezed model?
