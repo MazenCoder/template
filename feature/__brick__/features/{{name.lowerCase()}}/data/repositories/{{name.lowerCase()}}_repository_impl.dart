@@ -24,7 +24,7 @@ class {{name.pascalCase()}}RepositoryImpl implements {{name.pascalCase()}}Reposi
 
   @override
   Future<Either<Failure, {{name.pascalCase()}}Model>> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params) async {
-    if (await networkController.isConnected) {
+    if (networkController.isConnected) {
       try {
         {{name.pascalCase()}}Model model = await remoteDataSource.getConcrete{{name.pascalCase()}}(params);
         await localDataSource.cache{{name.pascalCase()}}(model);
@@ -34,7 +34,7 @@ class {{name.pascalCase()}}RepositoryImpl implements {{name.pascalCase()}}Reposi
       }
     } else {
       try {
-        {{name.pascalCase()}}Model model = await localDataSource.getLast{{name.pascalCase()}}();
+        {{name.pascalCase()}}Model model = localDataSource.getLast{{name.pascalCase()}}();
         return Right(model);
       } on CacheException {
         logger.e("error_connection".tr);

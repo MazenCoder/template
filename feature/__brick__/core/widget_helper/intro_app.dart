@@ -1,4 +1,4 @@
-import '../../features/{{name.lowerCase()}}/presentation/pages/{{name.lowerCase()}}.dart';
+import '../../features/{{name.lowerCase()}}/presentation/pages/{{name.lowerCase()}}_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
