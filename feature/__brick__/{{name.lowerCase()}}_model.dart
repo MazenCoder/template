@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part '{{name.lowerCase()}}.freezed.dart';
+part '{{name.lowerCase()}}_model.freezed.dart';
 
 @freezed
 class {{name.pascalCase()}} with _${{name.pascalCase()}} {
