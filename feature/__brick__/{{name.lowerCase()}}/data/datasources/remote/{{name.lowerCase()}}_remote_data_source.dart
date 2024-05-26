@@ -19,7 +19,7 @@ part '{{name.lowerCase()}}_remote_data_source.g.dart';
 
 abstract class I{{name.pascalCase()}}RemoteDataSource {
 
-  Future<{{name.pascalCase()}}Model> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params);
+  Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params);
 
 }
 

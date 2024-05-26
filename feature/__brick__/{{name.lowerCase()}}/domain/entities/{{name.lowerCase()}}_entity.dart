@@ -6,6 +6,8 @@ part '{{name.lowerCase()}}_entity.g.dart';
 
 @freezed
 class {{name.pascalCase()}}Entity with _${{name.pascalCase()}}Entity {
+
+  @JsonSerializable(explicitToJson: true, includeIfNull: false)
   const factory {{name.pascalCase()}}Entity({
     @JsonKey(name: '_id') required String id,
     required String username,

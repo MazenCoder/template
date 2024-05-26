@@ -7,6 +7,7 @@ part '{{name.lowerCase()}}_params.g.dart';
 @freezed
 class {{name.pascalCase()}}Params with _${{name.pascalCase()}}Params {
 
+  @JsonSerializable(explicitToJson: true, includeIfNull: false)
   const factory {{name.pascalCase()}}Params({
     @JsonKey(name: '_id') required String id,
     required String username,

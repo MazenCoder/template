@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
 
-part '{{name.lowerCase()}}_event.g.dart';
+part '{{name.lowerCase()}}_logic.g.dart';
 
 @Riverpod(keepAlive: true)
 class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
