@@ -13,7 +13,7 @@ import 'dart:convert';
 
 part '{{name.lowerCase()}}_remote_data_source.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 {{name.pascalCase()}}RemoteDataSource {{name.lowerCase()}}RemoteDataSource({{name.pascalCase()}}RemoteDataSourceRef ref) {
   return {{name.pascalCase()}}RemoteDataSource(
     apiClient: ref.watch(apiClientProvider),

@@ -13,7 +13,7 @@ import 'package:dartz/dartz.dart';
 part 'auth_repository.g.dart';
 
 
-@Riverpod(keepAlive: true)
+@riverpod
 {{name.pascalCase()}}Repository {{name.lowerCase()}}Repository({{name.pascalCase()}}RepositoryRef ref) {
   return {{name.pascalCase()}}Repository(
     networkInfo: ref.watch(networkInfoProvider),

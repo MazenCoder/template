@@ -9,7 +9,7 @@ import 'dart:convert';
 
 part '{{name.lowerCase()}}_local_data_source.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 {{name.pascalCase()}}LocalDataSource {{name.lowerCase()}}LocalDataSource({{name.pascalCase()}}LocalDataSourceRef ref) {
   return {{name.pascalCase()}}LocalDataSource(
     localStorageService: ref.watch(localStorageProvider),

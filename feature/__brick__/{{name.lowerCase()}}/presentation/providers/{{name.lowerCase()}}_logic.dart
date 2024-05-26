@@ -4,7 +4,7 @@ import '../../data/repositories/{{name.lowerCase()}}_repository.dart';
 
 part '{{name.lowerCase()}}_logic.g.dart';
 
-@Riverpod(keepAlive: true)
+@riverpod
 class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
 
 
