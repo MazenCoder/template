@@ -8,6 +8,7 @@ import 'package:equatable/equatable.dart';
 import 'package:dartz/dartz.dart';
 import 'package:meta/meta.dart';
 
+
 @injectable
 class Get{{name.pascalCase()}} implements UseCase<{{name.pascalCase()}}Entity, {{name.pascalCase()}}Params> {
   final {{name.pascalCase()}}Repository repository;
