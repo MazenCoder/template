@@ -1,7 +1,8 @@
+import '../../../../core/widgets/responsive_safe_area.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
 import 'package:flutter/material.dart';
-
+import '../providers/{{name.lowerCase()}}_logic.dart';
 
 
 class {{name.pascalCase()}}Screen extends ConsumerWidget {

@@ -1,5 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../domain/entities/{{name.lowerCase()}}_entity.dart';
+import '../../../../../core/services/storage/local_storage.dart';
+import 'package:easy_localization/easy_localization.dart';
+import '../../../../../core/error/failures.dart';
 import 'dart:convert';
 
 

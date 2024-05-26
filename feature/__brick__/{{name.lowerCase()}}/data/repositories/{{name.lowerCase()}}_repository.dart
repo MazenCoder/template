@@ -4,6 +4,7 @@ import '../datasources/local/{{name.lowerCase()}}_local_data_source.dart';
 import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
 import '../../domain/repositories/{{name.lowerCase()}}_repository.dart';
 import '../models/{{name.lowerCase()}}_params.dart';
+import '../../../../core/error/failures.dart';
 import 'package:dartz/dartz.dart';
 
 

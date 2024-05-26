@@ -1,5 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
+import '../../data/repositories/{{name.lowerCase()}}_repository.dart';
 
 part '{{name.lowerCase()}}_logic.g.dart';
 
@@ -34,13 +35,14 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
     });
   }
 
+  /*
   Future<{{name.pascalCase()}}Entity?> getConcrete{{name.pascalCase()}}ById(String id) async {
     final repository = ref.read({{name.lowerCase()}}RepositoryProvider);
     final result = await repository.getConcrete{{name.pascalCase()}}ById(id);
     return result.fold((l) => null, (r) => r);
   }
 
-  /*
+
   void add{{name.pascalCase()}}({{name.pascalCase()}}Entity entity) {
     final items = state.valueOrNull ?? [];
     state = const AsyncValue.loading();
