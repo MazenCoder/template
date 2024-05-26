@@ -11,14 +11,14 @@ import 'dart:convert';
 part '{{name.lowerCase()}}_local_data_source.g.dart';
 
 @Riverpod(keepAlive: true)
-{{name.pascalCase()}}LocalDataSource authLocalDataSource({{name.pascalCase()}}LocalDataSourceRef ref) {
+{{name.pascalCase()}}LocalDataSource {{name.lowerCase()}}LocalDataSource({{name.pascalCase()}}LocalDataSourceRef ref) {
   return {{name.pascalCase()}}LocalDataSource(
     localStorageService: ref.watch(localStorageProvider),
   );
 }
 
 
-abstract class IAuthLocalDataSource {
+abstract class I{{name.pascalCase()}}LocalDataSource {
   Future<void> store{{name.pascalCase()}}({{name.pascalCase()}}Entity entity);
   FutureOr<UserCreateEntity> get{{name.pascalCase()}}();
 
