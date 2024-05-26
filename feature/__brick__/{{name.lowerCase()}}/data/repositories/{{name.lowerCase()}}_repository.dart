@@ -1,15 +1,10 @@
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import '../datasources/remote/{{name.lowerCase()}}_remote_data_source.dart';
+import '../datasources/local/{{name.lowerCase()}}_local_data_source.dart';
+import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
 import '../../domain/repositories/{{name.lowerCase()}}_repository.dart';
-import '../datasources/{{name.lowerCase()}}_remote_data_source.dart';
-import '../datasources/{{name.lowerCase()}}_local_data_source.dart';
 import '../models/{{name.lowerCase()}}_params.dart';
-import '../../../../core/usecases/constants.dart';
-import '../../../../core/error/exceptions.dart';
-import '../../../../core/error/failures.dart';
-import 'package:injectable/injectable.dart';
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
-import 'package:get/get.dart';
-
 
 
 
@@ -27,21 +22,21 @@ part 'auth_repository.g.dart';
 
 
 
-class {{name.lowerCase()}}Repository implements I{{name.lowerCase()}}Repository {
+class {{name.pascalCase()}}Repository implements I{{name.pascalCase()}}Repository {
 
-  {{name.lowerCase()}}Repository({
+  {{name.pascalCase()}}Repository({
     required this.networkInfo,
     required this.remoteDataSource,
     required this.localDataSource,
   });
 
-  final I{{name.lowerCase()}}RemoteDataSource remoteDataSource;
-  final I{{name.lowerCase()}}LocalDataSource localDataSource;
+  final I{{name.pascalCase()}}RemoteDataSource remoteDataSource;
+  final I{{name.pascalCase()}}LocalDataSource localDataSource;
   final INetworkInfo networkInfo;
 
 
   @override
-  Future<Either<Failure, {{name.pascalCase()}}Entity>> getConcrete({{name.pascalCase()}}Params params) async {
+  Future<Either<Failure, {{name.pascalCase()}}Entity>> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params) async {
     if (await networkInfo.hasConnection) {
       try {
         final remoteResult = await remoteDataSource.getConcrete{{name.pascalCase()}}(params);
@@ -67,11 +62,12 @@ class {{name.lowerCase()}}Repository implements I{{name.lowerCase()}}Repository 
   }
 
 
+  /* Eg
   @override
-  Future<Either<Failure, {{name.pascalCase()}}Entity>> get{{name.pascalCase()}}({{name.pascalCase()}}Params params) async {
+  Future<Either<Failure, {{name.pascalCase()}}Entity>> get{{name.pascalCase()}}ById({{name.pascalCase()}}Params params) async {
     if (await networkInfo.hasConnection) {
       try {
-        final remoteResult = await remoteDataSource.getPostById(id);
+        final remoteResult = await remoteDataSource.get{{name.pascalCase()}}ById(id);
         return right(remoteResult);
       } on ServerFailure catch (failure) {
         return left(ServerFailure(
@@ -86,6 +82,7 @@ class {{name.lowerCase()}}Repository implements I{{name.lowerCase()}}Repository 
       ));
     }
   }
+  */
 
 }
 

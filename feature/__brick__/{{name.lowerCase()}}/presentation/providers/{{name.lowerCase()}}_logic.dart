@@ -1,11 +1,7 @@
-import 'package:sawwlnjawwb/features/posts/presentation/providers/more_posts.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../../data/repositories/post_repository.dart';
-import '../../domain/entities/post_entity.dart';
-import 'filters/filter_post.dart';
+import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
 
-
-part 'posts_event.g.dart';
+part '{{name.lowerCase()}}_event.g.dart';
 
 @Riverpod(keepAlive: true)
 class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
@@ -29,8 +25,8 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
     state = await AsyncValue.guard(() => load{{name.pascalCase()}}());
   }
 
-  Future<List<PostAuthorEntity>> load{{name.pascalCase()}}() async {
-    final repository = ref.read(postRepositoryProvider);
+  Future<{{name.pascalCase()}}Entity> load{{name.pascalCase()}}() async {
+    final repository = ref.read({{name.lowerCase()}}RepositoryProvider);
     final result = await repository.getConcrete{{name.pascalCase()}}(filter);
     return result.fold((l) => throw l, (r) {
       //! TODO: Implement Provider

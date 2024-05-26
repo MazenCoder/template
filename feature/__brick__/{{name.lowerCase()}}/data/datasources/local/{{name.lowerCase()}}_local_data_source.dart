@@ -1,10 +1,6 @@
-import '../models/{{name.lowerCase()}}_model.dart';
-import '../../../../core/error/exceptions.dart';
-import 'package:injectable/injectable.dart';
-import '../../../../core/util/boxes.dart';
-import 'package:meta/meta.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
+import '../../../domain/entities/{{name.lowerCase()}}_entity.dart';
 import 'dart:convert';
-
 
 
 
@@ -19,12 +15,15 @@ part '{{name.lowerCase()}}_local_data_source.g.dart';
 
 
 abstract class I{{name.pascalCase()}}LocalDataSource {
+
   Future<void> store{{name.pascalCase()}}({{name.pascalCase()}}Entity entity);
-  FutureOr<UserCreateEntity> get{{name.pascalCase()}}();
+  FutureOr<{{name.pascalCase()}}Entity> get{{name.pascalCase()}}();
 
   FutureOr<void> storeData({required String key, required Object value});
   FutureOr<dynamic>? getData(String key);
+
   Future<void> removeKey(String key);
+
 }
 
 

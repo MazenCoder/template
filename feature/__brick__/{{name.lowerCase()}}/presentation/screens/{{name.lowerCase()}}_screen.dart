@@ -1,13 +1,5 @@
-import 'package:sawwlnjawwb/features/navigation/presentation/screens/navigation_screen.dart';
-import 'package:sawwlnjawwb/features/auth/presentation/screens/login_screen.dart';
-import 'package:sawwlnjawwb/features/auth/domain/entities/user_entity.dart';
-import '../../../onboarding/presentation/screens/onboarding_screen.dart';
-import 'package:sawwlnjawwb/features/widgets/app_error.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../../widgets/responsive_safe_area.dart';
-import '../../../widgets/loading_app.dart';
-import 'package:go_router/go_router.dart';
-import '../providers/splash_event.dart';
+import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
 import 'package:flutter/material.dart';
 
 
