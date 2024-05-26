@@ -1,9 +1,9 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../domain/entities/{{name.lowerCase()}}_entity.dart';
 import 'package:flutter/foundation.dart';
-import '../../../../core/services/network/network_info.dart';
 import '../../../../../core/api_client/api_client.dart';
 import '../../models/{{name.lowerCase()}}_params.dart';
+import '../../../domain/utils/{{name.lowerCase()}}_converter.dart';
 import '../../../../../core/usecases/constants.dart';
 import '../../../../../core/error/failures.dart';
 import 'dart:convert';
