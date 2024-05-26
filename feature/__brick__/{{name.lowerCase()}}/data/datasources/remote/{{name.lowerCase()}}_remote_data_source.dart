@@ -20,7 +20,7 @@ part '{{name.lowerCase()}}_remote_data_source.g.dart';
 
 abstract class I{{name.pascalCase()}}RemoteDataSource {
 
-  Future<{{name.pascalCase()}}Model> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Entity params);
+  Future<{{name.pascalCase()}}Model> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params);
 
 }
 
@@ -35,7 +35,7 @@ class {{name.pascalCase()}}RemoteDataSource implements I{{name.pascalCase()}}Rem
 
 
   @override
-  Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Entity params) async {
+  Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params) async {
     try {
       final response = await apiClient.postData(
         url: '$baseUrlApi/{{name.lowerCase()}}',
@@ -57,33 +57,6 @@ class {{name.pascalCase()}}RemoteDataSource implements I{{name.pascalCase()}}Rem
         message: failure.message,
         type: failure.type,
       );
-    }
-  }
-
-
-
-}
-
-
-
-
-
-abstract class {{name.pascalCase()}}RemoteDataSource {
-  /// Throws a [ServerException] for all error codes.
-  Future<{{name.pascalCase()}}Model> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params);
-}
-
-
-@LazySingleton(as: {{name.pascalCase()}}RemoteDataSource)
-class {{name.pascalCase()}}RemoteDataSourceImpl implements {{name.pascalCase()}}RemoteDataSource {
-
-  @override
-  Future<{{name.pascalCase()}}Model> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params) async {
-    final response = await http.get(Uri.parse('link'));
-    if (response.statusCode == 200) {
-      return {{name.pascalCase()}}Model.fromJson(json.decode(response.body));
-      } else {
-      throw ServerException();
     }
   }
 }

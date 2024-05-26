@@ -1,13 +1,16 @@
-import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class {{name.pascalCase()}}Entity extends Equatable {
-  final String id;
+part '{{name.lowerCase()}}_entity.freezed.dart';
+part '{{name.lowerCase()}}_entity.g.dart';
 
-  {{name.pascalCase()}}Entity({
-    required this.id,
-  });
 
-  @override
-  List<Object> get props => [id];
+@freezed
+class {{name.pascalCase()}}Entity with _${{name.pascalCase()}}Entity {
+  const factory {{name.pascalCase()}}Entity({
+    @JsonKey(name: '_id') required String id,
+    required String username,
+    @Default(0) int status,
+  }) = _{{name.pascalCase()}}Entity;
+
+  factory {{name.pascalCase()}}Entity.fromJson(Map<String, dynamic> json) => _${{name.pascalCase()}}EntityFromJson(json);
 }
