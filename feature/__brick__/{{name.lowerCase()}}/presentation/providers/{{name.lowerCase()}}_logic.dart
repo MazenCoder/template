@@ -28,7 +28,9 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
 
   Future<{{name.pascalCase()}}Entity> load{{name.pascalCase()}}() async {
     final repository = ref.read({{name.lowerCase()}}RepositoryProvider);
-    final result = await repository.getConcrete{{name.pascalCase()}}(filter);
+    //! TODO: Change this params as you need
+    const params = {{name.pascalCase()}}Params(id: '', username: '');
+    final result = await repository.getConcrete{{name.pascalCase()}}(params);
     return result.fold((l) => throw l, (r) {
       //! TODO: Implement Provider
       return r;

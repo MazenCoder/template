@@ -10,7 +10,7 @@ import 'package:dartz/dartz.dart';
 
 
 
-part 'auth_repository.g.dart';
+part '{{name.lowerCase()}}_repository.g.dart';
 
 
 @Riverpod(keepAlive: true)
