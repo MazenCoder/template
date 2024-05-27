@@ -1,6 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
 import '../../data/repositories/{{name.lowerCase()}}_repository.dart';
+import '../../data/models/{{name.lowerCase()}}_params.dart';
 
 part '{{name.lowerCase()}}_logic.g.dart';
 
@@ -14,6 +15,8 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
 
   Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}() async {
     final repository = ref.read({{name.lowerCase()}}RepositoryProvider);
+    //! TODO: Change this params as you need
+    const params = {{name.pascalCase()}}Params(id: '', username: '');
     final result = await repository.getConcrete{{name.pascalCase()}}(params);
     return result.fold((l) => throw l.message, (r) {
       //! TODO: Implement Provider
