@@ -6,7 +6,7 @@ import '../providers/{{name.lowerCase()}}_logic.dart';
 
 
 class {{name.pascalCase()}}Screen extends ConsumerWidget {
-  static const routeName = '{{name.pascalCase()}}Screen';
+  static const routeName = '/{{name.pascalCase()}}Screen';
   const {{name.pascalCase()}}Screen({super.key});
 
   @override
