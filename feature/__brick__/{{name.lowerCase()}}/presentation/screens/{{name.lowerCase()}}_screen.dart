@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.lowerCase()}}_entity.dart';
 import 'package:tiaragroup/features/{{name.lowerCase()}}/presentation/providers/{{name.lowerCase()}}_logic.dart';
-import 'package:flutter/material.dart';
 
 
 class {{name.pascalCase()}}Screen extends ConsumerWidget {
@@ -10,8 +10,8 @@ class {{name.pascalCase()}}Screen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    AsyncValue<{{name.pascalCase()}}Entity?> asyncData = ref.watch({{name.lowerCase()}}LogicProvider);
-    ref.listen<{{name.pascalCase()}}Entity?>({{name.lowerCase()}}LogicProvider.select((data) => data.valueOrNull),
+  final AsyncValue<{{name.pascalCase()}}Entity?> asyncData = ref.watch({{name.lowerCase()}}LogicProvider);
+    ref.listen<{{name.pascalCase()}}Entity?>({{name.lowerCase()}}LogicProvider.select((AsyncValue<{{name.pascalCase()}}Entity> data) => data.value),
             (previousData, newData) {
           if (newData != null) {
             // final hideIntro = newUser.hideIntro;

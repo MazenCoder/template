@@ -1,7 +1,10 @@
+import 'dart:convert';
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.lowerCase()}}_entity.dart';
+import 'package:tiaragroup/core/error/failure.dart';
 import 'package:tiaragroup/core/storage/local_storage.dart';
-import 'package:tiaragroup/core/error/failures.dart';
+import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.lowerCase()}}_entity.dart';
 
 
 part '{{name.lowerCase()}}_local_data_source.g.dart';
@@ -9,7 +12,7 @@ part '{{name.lowerCase()}}_local_data_source.g.dart';
 @riverpod
 {{name.pascalCase()}}LocalDataSource {{name.lowerCase()}}LocalDataSource(Ref ref) {
   return {{name.pascalCase()}}LocalDataSource(
-    localStorageService: ref.watch(localStorageProvider),
+    localStorageService: ref.read(localStorageProvider),
   );
 }
 
@@ -17,9 +20,6 @@ abstract class I{{name.pascalCase()}}LocalDataSource {
 
   Future<void> store{{name.pascalCase()}}({{name.pascalCase()}}Entity entity);
   FutureOr<{{name.pascalCase()}}Entity> get{{name.pascalCase()}}();
-
-  FutureOr<void> storeData({required String key, required Object value});
-  FutureOr<dynamic>? getData(String key);
 
   Future<void> removeKey(String key);
 
@@ -32,14 +32,14 @@ class {{name.pascalCase()}}LocalDataSource implements I{{name.pascalCase()}}Loca
 
   final ILocalStorage localStorageService;
 
-  static const _key = 'entity{{name.lowerCase()}}';
+  static const _key = 'entity{{name.pascalCase()}}';
 
   @override
-  Future<void> removeKey(String key) => localStorageService.deleteKey(key: key);
+  Future<void> removeKey(String key) => localStorageService.remove(key);
 
   @override
   Future<void> store{{name.pascalCase()}}({{name.pascalCase()}}Entity entity) {
-    return localStorageService.putData(
+    return localStorageService.setString(
       value: json.encode(entity.toJson()),
       key: _key,
     );
@@ -47,28 +47,15 @@ class {{name.pascalCase()}}LocalDataSource implements I{{name.pascalCase()}}Loca
 
   @override
   FutureOr<{{name.pascalCase()}}Entity> get{{name.pascalCase()}}() {
-  final jsonString = localStorageService.getData(key: _key);
+  final jsonString = localStorageService.getString(_key);
   if (jsonString != null) {
-    return Future.value({{name.pascalCase()}}Entity.fromJson(json.decode('$jsonString')));
+    return {{name.pascalCase()}}Entity.fromJson(json.decode(jsonString));
     } else {
       throw ServerFailure(
-        type: ServerExceptionType.cache,
+        type: ExceptionType.cache,
         message: 'error_connection'.tr(),
       );
     }
-  }
-
-  @override
-  FutureOr<dynamic>? getData(String key) {
-    return localStorageService.getData(key: key);
-  }
-
-  @override
-  FutureOr<void> storeData({required String key, required Object value}) {
-    return localStorageService.putData(
-      value: value,
-      key: key,
-    );
   }
 
 }

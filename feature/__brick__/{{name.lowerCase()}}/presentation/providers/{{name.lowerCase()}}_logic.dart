@@ -1,6 +1,6 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import 'package:tiaragroup/features/{{name.lowerCase()}}/data/repositories/{{name.lowerCase()}}_repository.dart';
 import 'package:tiaragroup/features/{{name.lowerCase()}}/data/models/{{name.lowerCase()}}_params.dart';
+import 'package:tiaragroup/features/{{name.lowerCase()}}/data/repositories/{{name.lowerCase()}}_repository.dart';
 import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.lowerCase()}}_entity.dart';
 
 part '{{name.lowerCase()}}_logic.g.dart';
@@ -14,11 +14,11 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
 
 
   Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}() async {
-    final repository = ref.read({{name.lowerCase()}}RepositoryProvider);
+    final {{name.pascalCase()}}Repository repository = ref.read({{name.lowerCase()}}RepositoryProvider);
     //! TODO: Change this params as you need
-    const params = {{name.pascalCase()}}Params(id: '', username: '');
+    const {{name.pascalCase()}}Params params = {{name.pascalCase()}}Params();
     final result = await repository.getConcrete{{name.pascalCase()}}(params);
-    return result.fold((l) => throw l.message, (r) {
+    return result.fold((Failure l) => throw l.message, (r) {
       //! TODO: Implement Provider
       return r;
     });
@@ -30,12 +30,11 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
   }
 
   Future<{{name.pascalCase()}}Entity> load{{name.pascalCase()}}() async {
-    final repository = ref.read({{name.lowerCase()}}RepositoryProvider);
-
+    final {{name.pascalCase()}}Repository repository = ref.read({{name.lowerCase()}}RepositoryProvider);
     //! TODO: Change this params as you need
-    const params = {{name.pascalCase()}}Params(id: '', username: '');
-    final result = await repository.getConcrete{{name.pascalCase()}}(params);
-    return result.fold((l) => throw l, (r) {
+    const {{name.pascalCase()}}Params params = {{name.pascalCase()}}Params();
+    final Either<Failure, {{name.pascalCase()}}Entity> result = await repository.getConcrete{{name.pascalCase()}}(params);
+    return result.fold((Failure l) => throw l, (r) {
       //! TODO: Implement Provider
       return r;
     });
