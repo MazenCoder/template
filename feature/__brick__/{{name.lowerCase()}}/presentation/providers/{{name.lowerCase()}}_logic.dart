@@ -1,7 +1,7 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
-import '../../data/repositories/{{name.lowerCase()}}_repository.dart';
-import '../../data/models/{{name.lowerCase()}}_params.dart';
+import 'package:tiaragroup/features/{{name.lowerCase()}}/data/repositories/{{name.lowerCase()}}_repository.dart';
+import 'package:tiaragroup/features/{{name.lowerCase()}}/data/models/{{name.lowerCase()}}_params.dart';
+import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.lowerCase()}}_entity.dart';
 
 part '{{name.lowerCase()}}_logic.g.dart';
 
@@ -24,9 +24,9 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
     });
   }
 
-  Future<void> reload{{name.pascalCase()}}() async {
+  Future<void> reload() async {
     state = const AsyncValue.loading();
-    state = await AsyncValue.guard(() => load{{name.pascalCase()}}());
+    state = await AsyncValue.guard(() => getConcrete{{name.pascalCase()}}());
   }
 
   Future<{{name.pascalCase()}}Entity> load{{name.pascalCase()}}() async {
@@ -41,7 +41,7 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
     });
   }
 
-  /*
+  /* Eg: If you need to get item by id
   Future<{{name.pascalCase()}}Entity?> getConcrete{{name.pascalCase()}}ById(String id) async {
     final repository = ref.read({{name.lowerCase()}}RepositoryProvider);
     final result = await repository.getConcrete{{name.pascalCase()}}ById(id);
@@ -49,6 +49,7 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
   }
 
 
+  Eg: If you need to manage list of items
   void add{{name.pascalCase()}}({{name.pascalCase()}}Entity entity) {
     final items = state.valueOrNull ?? [];
     state = const AsyncValue.loading();
@@ -56,6 +57,7 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
     state = AsyncValue.data(items);
   }
 
+  Eg: If you need to manage list of items
   void update{{name.pascalCase()}}({{name.pascalCase()}}Entity entity) {
     final items = state.valueOrNull ?? [];
     if (items.isNotEmpty) {
@@ -69,6 +71,7 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
     }
   }
 
+  Eg: If you need to manage list of items
   void remove{{name.pascalCase()}}({{name.pascalCase()}}Entity entity) {
     final items = state.valueOrNull ?? [];
     if (items.isNotEmpty) {
@@ -80,6 +83,7 @@ class {{name.pascalCase()}}Logic extends _${{name.pascalCase()}}Logic {
     }
   }
 
+  Eg: If you need to manage list of items
   void add{{name.pascalCase()}}s(List<{{name.pascalCase()}}Entity> entities) {
     final items = state.valueOrNull ?? [];
     // state = const AsyncValue.loading();

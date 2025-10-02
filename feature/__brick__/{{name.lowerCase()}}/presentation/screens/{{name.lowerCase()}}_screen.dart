@@ -1,8 +1,7 @@
-import '../../../../core/widgets/responsive_safe_area.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../../domain/entities/{{name.lowerCase()}}_entity.dart';
+import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.lowerCase()}}_entity.dart';
+import 'package:tiaragroup/features/{{name.lowerCase()}}/presentation/providers/{{name.lowerCase()}}_logic.dart';
 import 'package:flutter/material.dart';
-import '../providers/{{name.lowerCase()}}_logic.dart';
 
 
 class {{name.pascalCase()}}Screen extends ConsumerWidget {
@@ -26,26 +25,18 @@ class {{name.pascalCase()}}Screen extends ConsumerWidget {
           }
         }
     );
-
-    return ResponsiveSafeArea(
-      context: context,
-      builder: (_) {
-        return Scaffold(
-          body: asyncData.when(
-            data: (user) {
-              return const SizedBox();
-            },
-            loading: () {
-              return const SizedBox();
-              // return const LoadingApp()
-            },
-            error: (e, st) {
-              return const SizedBox();
-              // return AppError(message: '$e');
-            },
-          ),
-        );
-      },
+    return Scaffold(
+      body: asyncData.when(
+        data: (user) {
+          return const SizedBox();
+        },
+        loading: () {
+          return const SizedBox();
+        },
+        error: (e, st) {
+          return const SizedBox();
+        },
+      ),
     );
   }
 }
