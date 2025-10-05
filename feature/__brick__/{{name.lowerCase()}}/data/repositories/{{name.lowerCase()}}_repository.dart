@@ -37,9 +37,9 @@ class {{name.pascalCase()}}Repository with NetworkHandler implements I{{name.pas
 
 
   @override
-  Future<Either<Failure, {{name.pascalCase()}}Entity>> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params) {
+  Future<Either<Failure, {{name.pascalCase()}}Entity>> getConcrete{{name.pascalCase()}}() {
     return handleNetworkCall<{{name.pascalCase()}}Entity>(
-      remoteRequest: () => remoteDataSource.getConcrete{{name.pascalCase()}}(params),
+      remoteRequest: () => remoteDataSource.getConcrete{{name.pascalCase()}}(),
     );
   }
 

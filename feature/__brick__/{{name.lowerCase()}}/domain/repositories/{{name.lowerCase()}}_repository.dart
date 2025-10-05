@@ -5,5 +5,5 @@ import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.
 
 
 abstract class I{{name.pascalCase()}}Repository {
-  Future<Either<Failure, {{name.pascalCase()}}Entity>> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params);
+  Future<Either<Failure, {{name.pascalCase()}}Entity>> getConcrete{{name.pascalCase()}}();
 }

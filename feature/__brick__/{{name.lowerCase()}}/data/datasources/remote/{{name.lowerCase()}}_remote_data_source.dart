@@ -18,7 +18,7 @@ part '{{name.lowerCase()}}_remote_data_source.g.dart';
 
 abstract class I{{name.pascalCase()}}RemoteDataSource {
 
-  Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params);
+  Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}();
 
 }
 
@@ -27,10 +27,9 @@ class {{name.pascalCase()}}RemoteDataSource implements I{{name.pascalCase()}}Rem
 
 
   @override
-  Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}({{name.pascalCase()}}Params params) async {
-    return await getIt<ApiService>().post(
+  Future<{{name.pascalCase()}}Entity> getConcrete{{name.pascalCase()}}() async {
+    return await getIt<ApiService>().get(
       endpoint: ApiConstants.{{name.lowerCase()}},
-      body: params.toJson(),
       onSuccess: (Map<String, dynamic> json) => {{name.pascalCase()}}Entity.fromJson(json),
     );
   }
