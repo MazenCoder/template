@@ -10,8 +10,8 @@ class {{name.pascalCase()}}Screen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-  final AsyncValue<{{name.pascalCase()}}Entity?> asyncData = ref.watch({{name.lowerCase()}}LogicProvider);
-    ref.listen<{{name.pascalCase()}}Entity?>({{name.lowerCase()}}LogicProvider.select((AsyncValue<{{name.pascalCase()}}Entity> data) => data.value),
+  final AsyncValue<{{name.pascalCase()}}Entity> asyncData = ref.watch({{name.lowerCase()}}LogicProvider);
+    ref.listen<{{name.pascalCase()}}Entity>({{name.lowerCase()}}LogicProvider.select((AsyncValue<{{name.pascalCase()}}Entity> data) => data.value),
             (previousData, newData) {
           if (newData != null) {
             // final hideIntro = newUser.hideIntro;
@@ -27,7 +27,7 @@ class {{name.pascalCase()}}Screen extends ConsumerWidget {
     );
     return Scaffold(
       body: asyncData.when(
-        data: (user) {
+        data: ({{name.pascalCase()}}Entity entity) {
           return Center(
              child: Text('success: ${entity.success}'),
           );
