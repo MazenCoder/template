@@ -5,7 +5,7 @@ import 'package:tiaragroup/features/{{name.lowerCase()}}/presentation/providers/
 
 
 class {{name.pascalCase()}}Screen extends ConsumerWidget {
-  static const routeName = '{{name.pascalCase()}}Screen';
+  static const String routeName = '{{name.pascalCase()}}Screen';
   const {{name.pascalCase()}}Screen({super.key});
 
   @override
@@ -28,10 +28,14 @@ class {{name.pascalCase()}}Screen extends ConsumerWidget {
     return Scaffold(
       body: asyncData.when(
         data: (user) {
-          return const SizedBox();
+          return Center(
+             child: Text('success: ${entity.success}'),
+          );
         },
         loading: () {
-          return const SizedBox();
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         },
         error: (e, st) {
           return const SizedBox();
