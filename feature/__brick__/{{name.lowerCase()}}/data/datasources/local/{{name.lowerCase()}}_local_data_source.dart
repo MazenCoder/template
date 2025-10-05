@@ -30,7 +30,7 @@ class {{name.pascalCase()}}LocalDataSource implements I{{name.pascalCase()}}Loca
 
   const {{name.pascalCase()}}LocalDataSource({required this.localStorageService});
 
-  final ILocalStorage localStorageService;
+  final LocalStorage localStorageService;
 
   static const _key = 'entity{{name.pascalCase()}}';
 
@@ -47,7 +47,7 @@ class {{name.pascalCase()}}LocalDataSource implements I{{name.pascalCase()}}Loca
 
   @override
   FutureOr<{{name.pascalCase()}}Entity> get{{name.pascalCase()}}() {
-  final jsonString = localStorageService.getString(_key);
+  final String? jsonString = localStorageService.getString(_key);
   if (jsonString != null) {
     return {{name.pascalCase()}}Entity.fromJson(json.decode(jsonString));
     } else {
