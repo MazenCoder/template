@@ -7,7 +7,6 @@ import 'package:tiaragroup/features/{{name.lowerCase()}}/data/datasources/local/
 import 'package:tiaragroup/features/{{name.lowerCase()}}/data/datasources/remote/{{name.lowerCase()}}_remote_data_source.dart';
 import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.lowerCase()}}_entity.dart';
 import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/repositories/{{name.lowerCase()}}_repository.dart';
-import 'package:dartz/dartz.dart';
 
 
 
