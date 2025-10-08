@@ -2,7 +2,6 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:tiaragroup/core/injection/injection.dart';
 import 'package:tiaragroup/core/services/api_service.dart';
 import 'package:tiaragroup/core/usecases/api_constants.dart';
-import 'package:tiaragroup/features/{{name.lowerCase()}}/data/models/{{name.lowerCase()}}_params.dart';
 import 'package:tiaragroup/features/{{name.lowerCase()}}/domain/entities/{{name.lowerCase()}}_entity.dart';
 
 
